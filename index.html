@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mapdy | Báo giá Founder &amp; đội mở điểm v1.14</title>
+<style>
+    :root{
+      --bg:#08111f;--bg2:#0d1a2c;--card:#111f34;--card2:#142640;--muted:#8fa2bc;--text:#eef6ff;
+      --line:rgba(255,255,255,.12);--blue:#38bdf8;--cyan:#67e8f9;--green:#22c55e;--yellow:#facc15;--orange:#fb923c;--red:#fb7185;
+      --white:#fff;--shadow:0 24px 70px rgba(0,0,0,.35);--radius:24px;--radius2:16px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 10% 0%,#123763 0%,rgba(18,55,99,0) 30%),linear-gradient(180deg,var(--bg),#060a12 100%);color:var(--text);font-family:Inter,Montserrat,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55;}
+    a{color:inherit;text-decoration:none} .progress{position:fixed;left:0;top:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--green));width:0;z-index:99}.nav{position:sticky;top:0;z-index:80;background:rgba(8,17,31,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.nav-inner{max-width:1180px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;gap:10px;align-items:center;font-weight:900;letter-spacing:.08em}.brand-mark{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--green));display:grid;place-items:center;color:#06111f}.nav-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.nav-links a{font-size:13px;color:var(--muted);padding:8px 10px;border-radius:999px}.nav-links a:hover{background:rgba(255,255,255,.08);color:#fff}.wrap{max-width:1180px;margin:auto;padding:0 20px}.hero{padding:78px 0 58px;position:relative;overflow:hidden}.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid var(--line);border-radius:999px;color:var(--cyan);font-size:13px;background:rgba(255,255,255,.04)}h1{font-size:clamp(42px,7vw,88px);line-height:.96;margin:22px 0 18px;letter-spacing:-.06em}.lead{font-size:clamp(18px,2vw,24px);color:#dcecff;max-width:820px}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:stretch}.hero-panel{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));box-shadow:var(--shadow);padding:24px}.hero-quote{font-size:28px;font-weight:850;letter-spacing:-.03em}.tag{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:7px 10px;background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.25);color:#b9ecff;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}.section{padding:48px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}.section h2{font-size:clamp(30px,4vw,52px);letter-spacing:-.045em;line-height:1.05;margin:0}.section p.sub{color:var(--muted);max-width:720px;margin:10px 0 0}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}.card{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.025));box-shadow:var(--shadow);padding:24px}.product-card{position:relative;overflow:hidden}.product-card:before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--blue)}.product-card.lir:before{background:var(--green)}.price{font-size:38px;line-height:1;font-weight:950;letter-spacing:-.045em;margin:16px 0 8px}.price small{font-size:16px;color:var(--muted);font-weight:650}.quote{font-size:22px;font-weight:850;color:#fff;margin:12px 0 16px}.list{display:grid;gap:9px;margin:16px 0}.li{display:flex;gap:10px;align-items:flex-start;color:#d8e7f6}.li span:first-child{flex:0 0 auto}.good,.bad,.warn{margin-top:16px;padding:14px;border-radius:16px}.good{background:rgba(34,197,94,.09);border:1px solid rgba(34,197,94,.22)}.bad{background:rgba(251,113,133,.08);border:1px solid rgba(251,113,133,.22)}.warn{background:rgba(250,204,21,.08);border:1px solid rgba(250,204,21,.25);color:#fff7ce}.mini-title{font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:#b8c7da;margin-bottom:8px}.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}.step{min-height:190px;border:1px solid var(--line);border-radius:20px;padding:16px;background:rgba(255,255,255,.045);position:relative}.step-num{width:34px;height:34px;border-radius:12px;background:rgba(56,189,248,.15);border:1px solid rgba(56,189,248,.35);display:grid;place-items:center;font-weight:900;color:#a8e6ff}.step-icon{font-size:30px;margin:16px 0 8px}.step h3{margin:0;font-size:18px;line-height:1.1}.step p{font-size:13px;color:var(--muted);margin:10px 0 0}.pill{display:inline-flex;margin-top:10px;border-radius:999px;padding:5px 8px;background:rgba(255,255,255,.08);font-size:12px;color:#fff}.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.plan{border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.045);padding:22px;position:relative}.plan.featured{border-color:rgba(34,197,94,.5);background:linear-gradient(180deg,rgba(34,197,94,.13),rgba(255,255,255,.035))}.ribbon{position:absolute;right:18px;top:18px;background:rgba(34,197,94,.16);border:1px solid rgba(34,197,94,.32);color:#bdfbd1;border-radius:999px;padding:6px 9px;font-size:12px;font-weight:800}.plan h3{font-size:25px;margin:0 0 6px}.plan .plan-price{font-size:32px;font-weight:950;letter-spacing:-.04em}.plan ul{padding-left:18px;color:#d9e8f6}.discount{margin-top:16px;padding:12px;border-radius:14px;border:1px dashed rgba(255,255,255,.22);color:#fff;font-weight:800}.enterprise{display:grid;grid-template-columns:.75fr 1.25fr;gap:20px}.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.feature{border:1px solid var(--line);border-radius:18px;padding:16px;background:rgba(255,255,255,.045)}.feature b{display:block;margin-bottom:4px}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.035)}table{border-collapse:collapse;width:100%;min-width:850px}th,td{padding:15px 16px;border-bottom:1px solid var(--line);text-align:left}th{color:#a9c1dc;text-transform:uppercase;font-size:12px;letter-spacing:.08em;background:rgba(255,255,255,.05)}td{color:#edf6ff}.star{color:var(--yellow);font-weight:950}.calculator{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px}.control{display:grid;gap:12px}select,input[type=range]{width:100%;padding:14px;border-radius:14px;border:1px solid var(--line);background:#0b1728;color:#fff;font-size:16px}input[type=range]{padding:0}.result{border:1px solid rgba(56,189,248,.3);border-radius:22px;padding:20px;background:linear-gradient(180deg,rgba(56,189,248,.12),rgba(255,255,255,.03))}.result-value{font-size:46px;font-weight:950;letter-spacing:-.05em}.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}.metric{padding:12px;border-radius:16px;background:rgba(255,255,255,.06);border:1px solid var(--line)}.metric span{display:block;color:var(--muted);font-size:12px}.metric b{font-size:18px}.discount-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.disc{border:1px solid var(--line);border-radius:20px;padding:18px;background:rgba(255,255,255,.045);text-align:center}.disc .pct{font-size:44px;font-weight:950;letter-spacing:-.05em}.disc .final{font-size:20px;font-weight:900}.accordion{display:grid;gap:10px}.acc{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.04);overflow:hidden}.acc button{width:100%;background:transparent;border:0;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:18px;font-size:17px;font-weight:850;text-align:left;cursor:pointer}.acc-body{display:none;padding:0 18px 18px;color:#cbdcf0}.acc.open .acc-body{display:block}.cta{margin:44px 0 70px;border-radius:32px;border:1px solid rgba(103,232,249,.28);background:radial-gradient(circle at 20% 10%,rgba(56,189,248,.24),transparent 35%),linear-gradient(135deg,rgba(20,38,64,.95),rgba(6,10,18,.96));padding:38px;box-shadow:var(--shadow);text-align:center}.cta h2{font-size:clamp(34px,5vw,60px);margin:0 0 12px;letter-spacing:-.05em}.cta p{max-width:760px;margin:0 auto 22px;color:#cfe0f3;font-size:18px}.btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:13px 18px;font-weight:900;border:1px solid var(--line);background:rgba(255,255,255,.08)}.btn.primary{background:linear-gradient(135deg,var(--blue),var(--green));color:#03101b;border:0}.footer{padding:28px 0 50px;color:var(--muted);border-top:1px solid var(--line)}.note{font-size:13px;color:var(--muted)}.segmented{display:flex;gap:8px;flex-wrap:wrap}.segmented button{border:1px solid var(--line);background:rgba(255,255,255,.05);color:#dbeafe;border-radius:999px;padding:10px 12px;font-weight:800;cursor:pointer}.segmented button.active{background:rgba(56,189,248,.2);border-color:rgba(56,189,248,.5);color:#fff}.recommendation{margin-top:14px;padding:18px;border-radius:18px;border:1px solid rgba(34,197,94,.24);background:rgba(34,197,94,.08)}
+    @media(max-width:1000px){.hero-grid,.grid-2,.enterprise,.calculator{grid-template-columns:1fr}.flow{grid-template-columns:repeat(3,1fr)}.plans{grid-template-columns:1fr}.discount-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:680px){.nav-links{display:none}.flow,.feature-grid,.result-grid,.discount-grid{grid-template-columns:1fr}.hero{padding-top:46px}.card,.cta{padding:20px}.section{padding:34px 0}h1{font-size:44px}.price{font-size:32px}}
+  
+    .principle-band{margin:18px 0 20px;border:1px solid rgba(103,232,249,.28);border-radius:var(--radius);background:radial-gradient(circle at 15% 10%,rgba(56,189,248,.18),transparent 34%),linear-gradient(135deg,rgba(20,38,64,.92),rgba(255,255,255,.035));padding:24px;box-shadow:var(--shadow)}
+    .principle-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;align-items:center}.principle-title{font-size:34px;line-height:1.05;font-weight:950;letter-spacing:-.045em}.principle-copy{color:#dcecff}.buy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 20px}.buy-card{border:1px solid var(--line);border-radius:20px;padding:16px;background:rgba(255,255,255,.045)}.buy-card b{display:block;font-size:17px;margin-bottom:6px}.buy-card p{margin:0;color:#cbdcf0}.logic-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}.logic-strip div{border:1px solid var(--line);border-radius:16px;padding:12px;background:rgba(255,255,255,.045);text-align:center;font-weight:850}.logic-strip small{display:block;color:var(--muted);font-weight:600;margin-top:3px}.product-note{margin-top:16px;padding:14px;border-radius:16px;background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.2);color:#dff5ff}
+    @media(max-width:1000px){.principle-grid,.buy-grid,.logic-strip{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<nav class="nav">
+<div class="nav-inner">
+<a class="brand" href="#top"><span class="brand-mark">⌖</span><span>MAPDY</span></a>
+<div class="nav-links"><a href="#compare">Sản phẩm</a><a href="#journey">Hành trình</a><a href="#plans">Gói tháng</a><a href="#package-compare">So sánh gói</a><a href="#calculator">Tính LIR</a><a href="#decision">Chọn gói</a><a href="#contact">Liên hệ</a></div>
+</div>
+</nav>
+<main id="top">
+<section class="hero">
+<div class="wrap">
+<div>
+<span class="eyebrow">🗺️ Nền tảng phân tích vị trí · v1.14 · 2026</span>
+<h1>Báo giá Mapdy cho Founder &amp; đội mở điểm</h1>
+<p class="lead">Mapdy không thay bạn chọn mặt bằng. Mapdy giúp bạn tránh chọn nhầm bằng dữ liệu, chấm điểm mặt bằng theo 4T và quy trình ra quyết định có kỷ luật.</p>
+<div class="btns" style="justify-content:flex-start;margin-top:24px"><a class="btn primary" href="#compare">Xem cấu trúc sản phẩm</a><a class="btn" href="#package-compare">So sánh các gói</a></div>
+</div>
+</div>
+</section><section class="section" id="journey">
+<div class="wrap">
+<div class="section-head"><div><h2>Hành trình ra quyết định đúng</h2><p class="sub">Logic Mapdy: có dữ liệu để lọc, có khảo sát để kiểm chứng, có LIR để ra quyết định trước khi xuống tiền.</p></div></div>
+<div class="flow">
+<div class="step"><div class="step-num">1</div><div class="step-icon">🔍</div><h3>Quét khu vực</h3><p>Chọn vùng muốn nghiên cứu trên bản đồ Mapdy.</p></div>
+<div class="step"><div class="step-num">2</div><div class="step-icon">📊</div><h3>Data Report</h3><p>Sàng lọc 5–10 vị trí bằng lượt báo cáo trong gói tháng.</p><span class="pill">500.000đ/điểm</span></div>
+<div class="step"><div class="step-num">3</div><div class="step-icon">📋</div><h3>Rút gọn danh sách 2–3 điểm</h3><p>Chọn điểm đáng đầu tư thời gian khảo sát. Bỏ qua phần còn lại.</p></div>
+<div class="step"><div class="step-num">4</div><div class="step-icon">🚶</div><h3>Khảo sát thực địa</h3><p>Đo đạc, chụp ảnh, kiểm tra mặt tiền, chỗ dừng/đậu xe, bố trí mặt bằng thực tế.</p></div>
+<div class="step"><div class="step-num">5</div><div class="step-icon">🎯</div><h3>Mua LIR</h3><p>Phân tích theo mô hình &amp; tệp khách cụ thể.</p><span class="pill">5.000.000đ/điểm</span></div>
+<div class="step"><div class="step-num">6</div><div class="step-icon">✅</div><h3>Quyết định</h3><p>MỞ / MỞ CÓ ĐIỀU KIỆN / KHÔNG MỞ.</p></div>
+</div>
+<div class="warn" style="margin-top:18px">Chấm điểm 4T trong Data Report = sàng lọc sơ bộ. Chấm điểm 4T trong LIR = phân tích quyết định theo mô hình kinh doanh cụ thể.</div>
+</div>
+</section>
+<section class="section" id="plans">
+<div class="wrap">
+<div class="section-head"><div><h2>Các gói đăng ký hàng tháng</h2><p class="sub">Gói tháng phục vụ sàng lọc bằng lượt Data Report. LIR mua riêng khi đã rút gọn danh sách và cần ra quyết định thuê.</p></div></div>
+<div class="plans">
+<div class="plan"><h3>Starter</h3><div class="plan-price">990.000đ <small>/tháng</small></div><ul><li>2 lượt Data Reports/tháng</li><li>Chấm điểm mặt bằng theo 4T cơ bản</li><li>Bản đồ vị trí tương tác</li><li>Xuất báo cáo dạng PDF</li></ul><p>🎯 Mới nghiên cứu khu vực, chưa có điểm cụ thể.</p><div class="discount">0% chiết khấu LIR</div></div>
+<div class="plan featured"><span class="ribbon">🔥 Chủ lực</span><h3>Growth</h3><div class="plan-price">3.900.000đ <small>/tháng</small></div><ul><li>6 lượt Data Reports/tháng</li><li>Chấm điểm 4T + vùng tiếp cận theo thời gian di chuyển</li><li>Chuyển lượt chưa dùng 1 tháng</li><li>So sánh đa địa điểm</li></ul><p>🎯 Đang có 3–6 mặt bằng, cần sàng lọc trước khi khảo sát sâu.</p><div class="discount">15% chiết khấu LIR</div></div>
+<div class="plan"><h3>Pro</h3><div class="plan-price">9.000.000đ <small>/tháng</small></div><ul><li>12 lượt Data Reports/tháng</li><li>2 thành phố đồng thời</li><li>Phân tích vùng tiếp cận nâng cao</li><li>Bảng điều khiển riêng</li></ul><p>🎯 Founder / nhà đầu tư có danh sách mặt bằng đang xét mặt bằng thật, cần so sánh đa địa điểm.</p><div class="discount">30% chiết khấu LIR</div></div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="wrap enterprise">
+<div class="card"><span class="tag">Enterprise</span><h2 style="margin-top:12px">Hệ thống mở điểm chuẩn hóa</h2><div class="price">149.000.000đ <small>/năm</small></div><p class="sub">Không phải gói mua báo cáo. Đây là hệ thống chuẩn hóa quy trình ra quyết định mở điểm cho cả đội.</p><div class="discount">Data Report không giới hạn · Chiết khấu LIR 40% · Không giới hạn thành phố · Người phụ trách tài khoản riêng</div></div>
+<div class="feature-grid">
+<div class="feature"><b>📊 Báo cáo dữ liệu khu vực</b>Dùng khi cần kiểm tra nhanh một khu vực hoặc một địa chỉ cụ thể.</div>
+<div class="feature"><b>📊 Dashboard danh sách mặt bằng đang xét điểm</b>Quản lý danh sách mặt bằng, trạng thái và điểm số.</div>
+<div class="feature"><b>✅ Form GO / GWC / NO-GO</b>Chuẩn hóa quyết định, giảm phụ thuộc cảm tính.</div>
+<div class="feature"><b>🎓 Training onboarding đội</b>Đào tạo dùng Mapdy đúng quy trình.</div>
+<div class="feature"><b>📅 Quarterly Expansion Review</b>Review chiến lược mở điểm, vùng ưu tiên, vùng bão hòa.</div>
+<div class="feature"><b>🗺️ Cannibalization analysis</b>Đánh giá rủi ro cạnh tranh nội bộ giữa các điểm.</div>
+</div>
+</div>
+</section>
+
+
+<section class="section" id="compare">
+<div class="wrap">
+<div class="section-head"><div><h2>Hai sản phẩm — hai nhiệm vụ khác nhau</h2><p class="sub">Mapdy có 2 sản phẩm chính: Data Report để sàng lọc điểm và LIR để ra quyết định trước khi xuống tiền. Cần tách rõ sản phẩm, cách mua và thời điểm sử dụng.</p></div></div>
+<div class="principle-band">
+<div class="principle-grid">
+<div>
+<span class="tag">Nguyên tắc cốt lõi</span>
+<div class="principle-title">500.000đ để sàng lọc.<br/>5.000.000đ để ra quyết định.</div>
+</div>
+<div class="principle-copy">
+<p>Đừng dùng báo cáo 500.000đ để quyết định một hợp đồng thuê vài trăm triệu. Data Report trả lời: “Khu vực này có gì?”. LIR trả lời: “Mô hình này có nên vào điểm này không?”.</p>
+<div class="warn"><b>Nguyên tắc mua hàng:</b><br/>Lượt báo cáo trong gói tháng chỉ dùng để xuất Data Report. Lượt báo cáo không đổi sang LIR. LIR là sản phẩm mua riêng theo từng điểm.</div>
+</div>
+</div>
+</div>
+<div class="buy-grid">
+<div class="buy-card"><b>1. Data Report mua lẻ</b><p>500.000đ / điểm. Dùng khi cần kiểm tra nhanh một khu vực hoặc một địa chỉ cụ thể.</p></div>
+<div class="buy-card"><b>2. Data Report theo gói tháng</b><p>Mua Starter, Growth, Pro hoặc Enterprise để có số lượt báo cáo mỗi tháng cho quá trình sàng lọc nhiều điểm.</p></div>
+<div class="buy-card"><b>3. LIR mua theo điểm</b><p>5.000.000đ / điểm trước chiết khấu. Chỉ dùng khi đã rút gọn còn 1–2 điểm và cần quyết định mở hay không mở.</p></div>
+</div>
+<div class="grid-2">
+<article class="card product-card">
+<span class="tag">Data Report — Báo cáo dữ liệu khu vực</span>
+<div class="price">500.000đ <small>/ điểm</small></div>
+<div class="quote">“Khu vực này có gì?”</div>
+<div class="list">
+<div class="li"><span>•</span><span>Dân số thường trú và dân số hoạt động ban ngày</span></div>
+<div class="li"><span>•</span><span>Cơ cấu độ tuổi, số hộ gia đình</span></div>
+<div class="li"><span>•</span><span>Điểm tiện ích xung quanh: trường học, văn phòng, chợ, y tế</span></div>
+<div class="li"><span>•</span><span>Số lượng và loại hình đối thủ F&amp;B trong khu vực</span></div>
+<div class="li"><span>•</span><span>Hành vi tiêu dùng tiềm năng theo khung giờ</span></div>
+</div>
+<div class="good"><div class="mini-title">Dùng khi</div>Còn nhiều khu vực cần sàng lọc 5–10 điểm, cần chọn 2–3 điểm đáng đi khảo sát thực địa.</div>
+<div class="bad"><div class="mini-title">Không dùng khi</div>Sắp ký hợp đồng thuê mặt bằng hoặc cần quyết định mở / không mở cụ thể.</div>
+<p class="note">Chấm điểm 4T trong Data Report là lớp sàng lọc sơ bộ. Đây chưa phải phân tích quyết định.</p>
+</article>
+<article class="card product-card lir">
+<span class="tag">LIR — Báo cáo phân tích quyết định điểm mở</span>
+<div class="price">5.000.000đ <small>/ điểm</small></div>
+<div class="quote">“Mô hình này có nên vào điểm này không?”</div>
+<div class="list">
+<div class="li"><span>•</span><span>Chấm điểm mặt bằng theo 4T, phân tích theo mô hình kinh doanh cụ thể</span></div>
+<div class="li"><span>•</span><span>Tệp khách mục tiêu so với dân cư thực tế khu vực</span></div>
+<div class="li"><span>•</span><span>Chấm điểm đối thủ trực tiếp trong bán kính 1.000–2.000m</span></div>
+<div class="li"><span>•</span><span>Rủi ro cứng: bố trí mặt bằng, chỗ dừng/đậu xe, độ nhìn thấy, tỷ lệ thuê/doanh thu</span></div>
+<div class="li"><span>•</span><span>Dự báo doanh thu sơ bộ và checklist khảo sát thực địa</span></div>
+</div>
+<div class="good"><div class="mini-title">Dùng khi</div>Đã rút gọn còn 1–2 điểm, sắp cọc hoặc ký thuê; cần quyết định MỞ / MỞ CÓ ĐIỀU KIỆN / KHÔNG MỞ.</div>
+<div class="bad"><div class="mini-title">Không phù hợp nếu</div>Vẫn còn hơn 5 điểm, chưa sàng lọc xong, hoặc chỉ cần biết khu vực đó có dân cư và điểm tiện ích gì.</div>
+<p class="note">Chấm điểm 4T trong LIR là phân tích quyết định theo mô hình kinh doanh cụ thể. Không thể thay bằng lớp sàng lọc sơ bộ.</p>
+</article>
+</div>
+<div class="logic-strip">
+<div>Data Report<small>Sàng lọc</small></div>
+<div>Khảo sát thực địa<small>Kiểm chứng</small></div>
+<div>LIR<small>Phân tích quyết định</small></div>
+<div>Kết luận<small>Mở / điều kiện / không mở</small></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="package-compare">
+<div class="wrap">
+<div class="section-head"><div><h2>So sánh các gói</h2><p class="sub">Bảng này dùng cho tư vấn nhanh khi khách cần xác định gói phù hợp theo số thành phố, số lượng lượt Data Report và nhu cầu phân tích chuyên sâu LIR.</p></div></div>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Tính năng</th><th>Starter</th><th>Growth</th><th>Pro</th><th>Enterprise</th></tr></thead>
+<tbody>
+<tr><td>Giá tháng</td><td>990.000đ</td><td>3.900.000đ</td><td>9.000.000đ</td><td>—</td></tr>
+<tr><td>Giá năm</td><td>10.900.000đ</td><td>39.500.000đ</td><td>90.000.000đ</td><td>149.000.000đ</td></tr>
+<tr><td>Thành phố có dữ liệu điểm tiện ích</td><td>1</td><td>1</td><td>2</td><td>Không giới hạn</td></tr>
+<tr><td>Lượt Data Report</td><td>2/tháng</td><td>6/tháng</td><td>12/tháng</td><td>Không giới hạn</td></tr>
+<tr><td>Dữ liệu theo điểm</td><td class="star">Không giới hạn</td><td class="star">Không giới hạn</td><td class="star">Không giới hạn</td><td class="star">Không giới hạn</td></tr>
+<tr><td>Rollover Lượt báo cáo</td><td>—</td><td>1 tháng</td><td>2 tháng</td><td>—</td></tr>
+<tr><td>Dân số toàn quốc</td><td class="star">✓</td><td class="star">✓</td><td class="star">✓</td><td class="star">✓</td></tr>
+<tr><td>Bản đồ nhiệt</td><td class="star">✓</td><td class="star">✓</td><td class="star">✓</td><td class="star">✓</td></tr>
+<tr><td>Phân tích vùng tiếp cận theo thời gian di chuyển</td><td>—</td><td class="star">✓</td><td class="star">✓</td><td class="star">✓</td></tr>
+<tr><td>Chấm điểm mặt bằng theo 4T</td><td>Cơ bản</td><td class="star">✓</td><td class="star">✓</td><td class="star">✓</td></tr>
+<tr><td>Chiết khấu LIR</td><td>0%</td><td class="star">15%</td><td class="star">30%</td><td class="star">40%</td></tr>
+<tr><td>Quản lý đội nhóm</td><td>—</td><td>—</td><td>—</td><td class="star">✓</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="section" id="calculator">
+<div class="wrap">
+<div class="section-head"><div><h2>Tính nhanh chi phí LIR</h2><p class="sub">Công cụ này cho thấy LIR luôn là sản phẩm mua riêng theo từng điểm. Gói tháng chỉ tạo mức chiết khấu LIR, không dùng lượt báo cáo để đổi LIR.</p></div></div>
+<div class="calculator">
+<div class="card control">
+<label><b>Gói đang dùng</b><select id="planSelect"><option value="0">Starter — 0%</option><option selected="" value="15">Growth — 15%</option><option value="30">Pro — 30%</option><option value="40">Enterprise — 40%</option></select></label>
+<label><b>Số điểm cần LIR</b><input id="pointsRange" max="10" min="1" type="range" value="2"/><span class="pill" id="pointsLabel">2 điểm</span></label>
+<div class="warn">LIR nên dùng khi đã rút gọn danh sách xuống 1–2 điểm và đang chuẩn bị cọc / ký thuê.</div>
+</div>
+<div class="result">
+<span class="tag">Ước tính chi phí LIR</span>
+<div class="result-value" id="totalCost">8.500.000đ</div>
+<div class="result-grid">
+<div class="metric"><span>Giá sau chiết khấu / điểm</span><b id="perPoint">4.250.000đ</b></div>
+<div class="metric"><span>Tiết kiệm / điểm</span><b id="savePoint">750.000đ</b></div>
+<div class="metric"><span>Tổng tiết kiệm</span><b id="saveTotal">1.500.000đ</b></div>
+</div>
+</div>
+</div>
+<div class="discount-grid" style="margin-top:16px">
+<div class="disc"><div>Starter</div><div class="pct">0%</div><div class="final">5.000.000đ</div><small>giá gốc</small></div>
+<div class="disc"><div>Growth</div><div class="pct">15%</div><div class="final">4.250.000đ</div><small>tiết kiệm 750.000đ/điểm</small></div>
+<div class="disc"><div>Pro</div><div class="pct">30%</div><div class="final">3.500.000đ</div><small>tiết kiệm 1.500.000đ/điểm</small></div>
+<div class="disc"><div>Enterprise</div><div class="pct">40%</div><div class="final">3.000.000đ</div><small>tiết kiệm 2.000.000đ/điểm</small></div>
+</div>
+</div>
+</section>
+<section class="section" id="decision">
+<div class="wrap">
+<div class="section-head"><div><h2>Nên chọn gói nào?</h2><p class="sub">Chọn tình huống để xem khuyến nghị nhanh. Kết luận không thay thế tư vấn, nhưng giúp tránh mua sai tầng sản phẩm.</p></div></div>
+<div class="card">
+<div class="segmented" id="scenarioBtns">
+<button class="active" data-s="new">Mới nghiên cứu</button>
+<button data-s="shortlist">Có 3–6 mặt bằng</button>
+<button data-s="parallel">Mở 2–5 điểm song song</button>
+<button data-s="signing">Sắp cọc / ký</button>
+<button data-s="chain">Chuỗi 5+ điểm/năm</button>
+</div>
+<div class="recommendation" id="recommendation"></div>
+</div>
+<div class="table-wrap" style="margin-top:18px">
+<table>
+<thead><tr><th>Tình huống</th><th>Gói phù hợp</th><th>Cần LIR?</th><th>Mục tiêu đầu ra</th></tr></thead>
+<tbody>
+<tr><td>Mới nghiên cứu, chưa biết nên nhìn vào đâu</td><td>Starter</td><td>Chưa cần</td><td>Hiểu khu vực, chọn điểm đáng đi xem</td></tr>
+<tr><td>Đang có 3–6 mặt bằng, cần sàng lọc nhanh</td><td>Growth <span class="star">★</span></td><td>Cân nhắc khi rút gọn danh sách</td><td>Rút xuống 2–3 điểm đáng phân tích sâu</td></tr>
+<tr><td>Founder / nhà đầu tư mở 2–5 điểm song song</td><td>Pro</td><td>Khuyến nghị</td><td>So sánh đa địa điểm, 2 thành phố</td></tr>
+<tr><td>Sắp ký / cọc mặt bằng — cần quyết định mở / không mở</td><td>Bất kỳ gói nào + LIR</td><td><b>NÊN CÓ</b></td><td>MỞ / MỞ CÓ ĐIỀU KIỆN / KHÔNG MỞ</td></tr>
+<tr><td>Chuỗi / đội expansion mở 5+ điểm/năm</td><td>Enterprise</td><td>Discount 40%</td><td>Chuẩn hóa quy trình toàn đội</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="wrap">
+<div class="accordion">
+<div class="acc open"><button>Data Report có thay LIR được không?<span>＋</span></button><div class="acc-body">Không. Data Report giúp nhìn thấy dữ liệu khu vực và sàng lọc sơ bộ. LIR phân tích theo mô hình kinh doanh cụ thể, tệp khách cụ thể và rủi ro mặt bằng cụ thể để đi tới quyết định MỞ / MỞ CÓ ĐIỀU KIỆN / KHÔNG MỞ.</div></div>
+<div class="acc"><button>Lượt báo cáo tháng có đổi sang LIR được không?<span>＋</span></button><div class="acc-body">Không. Lượt báo cáo chỉ dùng để xuất Data Report. LIR là sản phẩm mua riêng theo từng điểm, tách biệt với gói tháng. Gói tháng chỉ ảnh hưởng đến mức chiết khấu LIR.</div></div>
+<div class="acc"><button>Khi nào nên mua LIR?<span>＋</span></button><div class="acc-body">Khi đã rút gọn danh sách xuống 1–2 điểm, đã khảo sát thực địa sơ bộ, và đang chuẩn bị cọc hoặc ký hợp đồng thuê. LIR không phù hợp khi vẫn còn quá nhiều điểm chưa lọc.</div></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="contact">
+<div class="wrap">
+<div class="section-head"><div><h2>Thông tin liên hệ</h2><p class="sub">Liên hệ Mapdy để được tư vấn gói phù hợp, xuất Data Report hoặc đặt LIR cho điểm đang chuẩn bị xuống tiền.</p></div></div>
+<div class="grid-2">
+<div class="card">
+<span class="tag">Mapdy.vn</span>
+<div class="list" style="margin-top:18px">
+<div class="li"><span>🌐</span><span><b>Website:</b> <a href="https://mapdy.vn" target="_blank" rel="noopener">https://mapdy.vn</a></span></div>
+<div class="li"><span>✉️</span><span><b>Email:</b> <a href="mailto:mapdy.vn@gmail.com">mapdy.vn@gmail.com</a></span></div>
+<div class="li"><span>☎️</span><span><b>Hotline:</b> <a href="tel:0347808368">0347808368</a></span></div>
+<div class="li"><span>📝</span><span><b>Phiếu liên hệ dịch vụ:</b> <a href="https://forms.gle/yWj6qbCWXN9tEwBc6" target="_blank" rel="noopener">https://forms.gle/yWj6qbCWXN9tEwBc6</a></span></div>
+</div>
+</div>
+<div class="card">
+<div class="mini-title">Nên gửi gì trước khi tư vấn?</div>
+<div class="list">
+<div class="li"><span>•</span><span>Mô hình kinh doanh dự kiến: F&amp;B, bán lẻ, dịch vụ hoặc mô hình khác.</span></div>
+<div class="li"><span>•</span><span>Địa chỉ / khu vực / danh sách điểm đang cân nhắc.</span></div>
+<div class="li"><span>•</span><span>Mức giá bán, tệp khách mục tiêu và thời gian hoàn vốn kỳ vọng.</span></div>
+<div class="li"><span>•</span><span>Trạng thái hiện tại: đang sàng lọc, đã khảo sát, hay sắp cọc / ký thuê.</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="wrap">
+<section class="cta">
+<h2>Know before you open.</h2>
+<p>Mapdy không bán dữ liệu để xem cho biết. Mapdy giúp bạn sàng lọc đúng khu vực, phân tích đúng mặt bằng, và ra quyết định có căn cứ trước khi xuống tiền.</p>
+<div class="btns"><a class="btn primary" href="#compare">Xem lại sản phẩm</a><a class="btn" href="#plans">Xem gói tháng</a></div>
+<p class="note" style="margin-top:20px">“Không mở quán để thử — mở để sống được, và sống dài lâu.” — VCS</p>
+</section>
+</div>
+</main>
+<footer class="footer"><div class="wrap">Mapdy.vn · Location Intelligence Platform for Retail — F&amp;B — Services · Báo giá Founder &amp; đội mở điểm v1.14</div></footer>
+<script>
+    const fmt = n => new Intl.NumberFormat('vi-VN').format(Math.round(n)) + 'đ';
+    const base = 5000000;
+    const planSelect = document.getElementById('planSelect');
+    const pointsRange = document.getElementById('pointsRange');
+    const pointsLabel = document.getElementById('pointsLabel');
+    const totalCost = document.getElementById('totalCost');
+    const perPoint = document.getElementById('perPoint');
+    const savePoint = document.getElementById('savePoint');
+    const saveTotal = document.getElementById('saveTotal');
+    function updateCalc(){
+      const discount = Number(planSelect.value)/100;
+      const points = Number(pointsRange.value);
+      const price = base * (1-discount);
+      const saving = base - price;
+      pointsLabel.textContent = points + ' điểm';
+      perPoint.textContent = fmt(price);
+      savePoint.textContent = fmt(saving);
+      saveTotal.textContent = fmt(saving*points);
+      totalCost.textContent = fmt(price*points);
+    }
+    planSelect.addEventListener('change', updateCalc); pointsRange.addEventListener('input', updateCalc); updateCalc();
+
+    const copy = {
+      new:{title:'Khuyến nghị: Starter',body:'Dùng khi mới nghiên cứu khu vực và chưa có điểm cụ thể. Mục tiêu là hiểu vùng, lọc các điểm đáng đi xem. Chưa nên mua LIR ở giai đoạn này.'},
+      shortlist:{title:'Khuyến nghị: Growth ★',body:'Phù hợp khi đang có 3–6 mặt bằng cần sàng lọc nhanh. Sau khi rút xuống 2–3 điểm, mới cân nhắc LIR cho điểm chuẩn bị đi sâu.'},
+      parallel:{title:'Khuyến nghị: Pro',body:'Phù hợp với Founder / nhà đầu tư có danh sách mặt bằng đang xét thật, cần so sánh đa địa điểm và có thể phân tích 2 thành phố song song. Nên dùng LIR cho các điểm sắp xuống tiền.'},
+      signing:{title:'Khuyến nghị: Bất kỳ gói + LIR',body:'Nếu đã sắp cọc hoặc ký thuê, LIR là lớp nên có. Mục tiêu đầu ra phải là MỞ / MỞ CÓ ĐIỀU KIỆN / KHÔNG MỞ, không chỉ là xem dữ liệu khu vực.'},
+      chain:{title:'Khuyến nghị: Enterprise',body:'Phù hợp với chuỗi hoặc đội expansion mở 5+ điểm/năm. Mục tiêu là chuẩn hóa tiêu chí, dashboard danh sách mặt bằng đang xét, form quyết định và review mở điểm định kỳ.'}
+    };
+    const rec = document.getElementById('recommendation');
+    function setRec(key){
+      const item = copy[key] || copy.new;
+      rec.innerHTML = '<h3 style="margin:0 0 6px">'+item.title+'</h3><p style="margin:0;color:#d8e7f6">'+item.body+'</p>';
+    }
+    setRec('new');
+    const scenarioBtns = document.getElementById('scenarioBtns');
+    scenarioBtns.addEventListener('click', e => {
+      const btn = e.target.closest('button');
+      if(!btn || !scenarioBtns.contains(btn)) return;
+      [...scenarioBtns.children].forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      setRec(btn.dataset.s);
+    });
+
+    document.querySelectorAll('.acc button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const acc = btn.parentElement;
+        acc.classList.toggle('open');
+        const icon = btn.querySelector('span');
+        if(icon) icon.textContent = acc.classList.contains('open') ? '－' : '＋';
+      });
+    });
+    document.querySelectorAll('.acc.open button span').forEach(icon => icon.textContent = '－');
+    window.addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progress').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'});
+  </script>
+</body>
+</html>

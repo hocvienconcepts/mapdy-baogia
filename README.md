@@ -1,4 +1,4 @@
-# Mapdy — Báo giá Founder & đội mở điểm (v1.14)
+# Mapdy — Báo giá Founder & đội mở điểm (v1.17)
 
 Trang báo giá tĩnh (1 file `index.html`) cho nền tảng phân tích vị trí Mapdy.
 Deploy bằng Cloudflare Pages qua kết nối GitHub.
